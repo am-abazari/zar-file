@@ -25,8 +25,12 @@
 
     /* Spacing */
     --size-fit: max(1rem, (100vw - 75rem) / 2);
-    --size-circle: 16rem;
-    --size-heading : clamp(2rem, 1.5714rem + 1.9048vw, 3rem);
+    --size-circle-big: 16rem;
+    --size-circle-small: 8rem;
+    --size-heading: clamp(2rem, 1.5714rem + 1.9048vw, 3rem);
+    --size-mobile: 22.5rem;
+    --size-mobile-medium: 25rem;
+    --size-monitor: 75rem;
 
 }
 
@@ -58,10 +62,11 @@ body {
     color: var(--foreground);
     font-family: Inter, system-ui;
     width: 100vw;
-    height: 100dvh;
+    min-height: 100dvh;
+    overflow-inline: hidden;
     padding-inline: var(--size-fit);
 }
 
-.heading{
+.heading {
     font-size: var(--size-heading);
 }
