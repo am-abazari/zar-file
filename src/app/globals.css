@@ -1,25 +1,67 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+    /* Colors */
+    --background: hsl(266, 37%, 4%);
+    --foreground: hsl(0, 0%, 93%);
+    --color-primary: hsl(232, 86%, 64%);
+    --color-primary-dark: hsl(232, 86%, 60%);
+    --color-primary-light: hsl(232, 86%, 70%);
+
+
+    /* Texts */
+    --text-primary: hsl(232, 86%, 64%);
+    --text-secondary: hsl(0, 0%, 75%);
+    --text-secondary-light: hsl(0, 0%, 90%);
+
+    /* Borders */
+
+
+    /* Shadows */
+
+
+    /* Blur */
+    --blur-circle: 11rem;
+
+    /* Spacing */
+    --size-fit: max(1rem, (100vw - 75rem) / 2);
+    --size-circle: 16rem;
+    --size-heading : clamp(2rem, 1.5714rem + 1.9048vw, 3rem);
+
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-inter)
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    /*--font-sans: var(--font-inter)*/
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@layer base {
+    *, *::before, *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+
+input,
+button,
+select,
+label,
+textarea {
+    font-family: inherit;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Inter, system-ui;
+    background: var(--background);
+    color: var(--foreground);
+    font-family: Inter, system-ui;
+    width: 100vw;
+    height: 100dvh;
+    padding-inline: var(--size-fit);
+}
+
+.heading{
+    font-size: var(--size-heading);
 }

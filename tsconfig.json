@@ -19,7 +19,8 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@components/*": ["./src/app/components/*"]
     }
   },
   "include": [
@@ -32,3 +33,5 @@
   ],
   "exclude": ["node_modules"]
 }
+
+
