@@ -1,0 +1,4 @@
+.CircleShadow {
+    width: var(--size-circle);
+    height: var(--size-circle);
+}
