@@ -1,5 +1,7 @@
 import CircleShadow from "@components/CircleShadow/CircleShadow";
-import Button from "./components/Button";
+import Button from "@components/Button";
+import GrommetIconsGithub from "@icons/GrommetIconsGithub";
+import ZondiconsBolt from "./assets/icons/ZondiconsBolt";
 
 export default function Home() {
     return (
@@ -15,8 +17,8 @@ export default function Home() {
                 natus officia, perferendis praesentium quae quas quidem quo saepe sit unde. Atque, cumque?</p>
 
             <div className="flex gap-6 justify-center items-center mt-16">
-                <Button className={'basis-66'} variant={"fill"}>Start Using Zar File</Button>
-                <Button className={'basis-48'} variant={"border"}>Github</Button>
+                <Button className={'basis-66'} variant={"fill"} icon={<ZondiconsBolt />} >Start Using Zar File</Button>
+                <Button className={'basis-48'} variant={"border"} icon={<GrommetIconsGithub />}>Github</Button>
             </div>
 
 

@@ -20,7 +20,10 @@
     ],
     "paths": {
       "@/*": ["./src/*"],
-      "@components/*": ["./src/app/components/*"]
+      "@components/*": ["./src/app/components/*"],
+      "@assets/*": ["./src/app/assets/*"],
+      "@icons/*": ["./src/app/assets/icons/*"],
+      "@images/*": ["./src/app/assets/images/*"],
     }
   },
   "include": [
