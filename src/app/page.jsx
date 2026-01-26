@@ -16,7 +16,7 @@ import SolarGallerySendLineDuotone from "@icons/SolarGallerySendLineDuotone";
 export default function Home() {
     return (
         <div className={"pt-10 relative text-center"}>
-            <h1 className={`heading mt-10 font-semibold leading-21`}>The <span
+            <h1 className={`heading mt-10 font-semibold`}>The <span
                 className={`text-(--text-primary) font-bold`}>Open-Source</span> <br/> Platform for Uploading and
                 Downloading Files</h1>
             <CircleShadow className={`inset-x-0 m-auto -mt-18 bg-(--color-primary)`}/>
@@ -26,7 +26,7 @@ export default function Home() {
                 provident repudiandae saepe unde vero. Ad commodi cumque dignissimos dolorem, in libero minus mollitia,
                 natus officia, perferendis praesentium quae quas quidem quo saepe sit unde. Atque, cumque?</p>
 
-            <div className="flex gap-6 justify-center items-center mt-16">
+            <div className="flex gap-6 justify-center items-center mt-16 flex-wrap">
                 <Button type={"link"} href={"#"} className={'basis-66'} variant={"fill"} icon={<ZondiconsBolt/>}>Start
                     Using Zar File</Button>
                 <Button type={"link"} href={"https://www.github.com/am-abazari/zar-file"} target={"_blank"}
