@@ -19,7 +19,7 @@ export const metadata = {
 export default function RootLayout({children}) {
     return (
         <html lang="en">
-        <body className={``}>
+        <body className={`flex flex-col justify-between items-center`}>
         {children}
         <Footer />
         </body>
