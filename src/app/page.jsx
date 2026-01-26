@@ -27,7 +27,7 @@ export default function Home() {
                 natus officia, perferendis praesentium quae quas quidem quo saepe sit unde. Atque, cumque?</p>
 
             <div className="flex gap-6 justify-center items-center mt-16 flex-wrap">
-                <Button type={"link"} href={"#"} className={'basis-66'} variant={"fill"} icon={<ZondiconsBolt/>}>Start
+                <Button type={"link"} href={"/file"} className={'basis-66'} variant={"fill"} icon={<ZondiconsBolt/>}>Start
                     Using Zar File</Button>
                 <Button type={"link"} href={"https://www.github.com/am-abazari/zar-file"} target={"_blank"}
                         className={'basis-48'} variant={"border"} icon={<GrommetIconsGithub/>}>Github</Button>
@@ -56,7 +56,7 @@ export default function Home() {
                             possimus,
                             similique.
                         </p>
-                        <Button type={"link"} href={"/notes"} className={"mt-5 ml-auto text-sm"}>Create Note</Button>
+                        <Button type={"link"} href={"/note"} className={"mt-5 ml-auto text-sm"}>Create Note</Button>
                     </div>
                 </Card>
                 <Card icon={<MaterialSymbolsCloudLockRounded/>} title={"Secure"}>
