@@ -11,7 +11,7 @@ import MaterialSymbolsFolderSpecialRounded from "@icons/MaterialSymbolsFolderSpe
 import FluentNote16Filled from "@icons/FluentNote16Filled";
 import MaterialSymbolsCloudLockRounded from "@icons/MaterialSymbolsCloudLockRounded";
 import SolarGallerySendLineDuotone from "@icons/SolarGallerySendLineDuotone";
-import Hero from "./components/Hero/Hero";
+import Hero from "@components/Hero/Hero";
 
 export default function Home() {
     return (

@@ -23,8 +23,10 @@ const IconMaker = ({type, setTheme}) => {
 
 
     useEffect(() => {
-        setTheme(`border-[${theme}]`)
+        setTheme(theme)
     }, [])
+
+
     return (<>{component}</>)
 }
 

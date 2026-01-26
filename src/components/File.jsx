@@ -11,8 +11,8 @@ const File = ({file, ...props}) => {
     const [theme, setTheme] = useState("");
 
     return (
-        <div
-            className={clsx(" flex gap-4 items-center basis-72 grow p-5 rounded-lg backdrop-blur-xl shadow-lg bg-(--color-white-blur) border border-dashed md:text-base text-sm  ", theme)} {...props}>
+        <div style={{borderColor:theme}}
+            className={clsx(" flex gap-4 items-center basis-72 grow p-5 rounded-lg backdrop-blur-xl shadow-lg bg-(--color-white-blur) border border-dashed md:text-base text-sm  ")} {...props}>
             <span className={"text-xl"}><IconMaker setTheme={setTheme} type={type}/></span>
             {file.name}
         </div>
