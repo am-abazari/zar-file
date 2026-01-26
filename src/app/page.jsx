@@ -70,7 +70,7 @@ export default function Home() {
                         </p>
                     </div>
                 </Card>
-                <Card icon={<SolarGallerySendLineDuotone/ >} title={<>Private <span className='font-thin text-sm'>&</span> Public Share</>}>
+                <Card icon={<SolarGallerySendLineDuotone />} title={<>Private <span className='font-thin text-sm'>&</span> Public Share</>}>
                     <div>
                         <p>Lorem ipsum dolor sit amet,
                             consectetur adipisicing elit. Atque, consequuntur, voluptatem. Aut laboriosam quas sed.
