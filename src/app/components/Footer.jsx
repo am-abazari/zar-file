@@ -9,7 +9,7 @@ import SolarProgrammingBroken from "@icons/SolarProgrammingBroken";
 const Footer = () => {
     return (
         <>
-            <CircleShadow size={"small"} className={`mt-20 bg-yellow-300 -bottom-50 right-0 left-0 mx-auto`} />
+            <CircleShadow size={"small"} className={`mt-20 bg-yellow-300 right-0 left-0 mx-auto`} />
             <footer className="mt-25 w-full p-8 bg-white/5 backdrop-blur-2xl shadow-xl rounded-2xl mb-3 sm:text-base text-sm">
                 <p className={"flex  items-center gap-3"}><SolarProgrammingBroken /> Developed by <Link target={"_blank"} className={"text-(--text-primary) font-semibold"} href={"https://www.amabazari.ir"}>Amirhossein Abazari</Link></p>
             </footer>
