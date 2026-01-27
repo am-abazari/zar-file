@@ -1,0 +1,14 @@
+.file {
+    overflow: hidden;
+
+    .delete {
+        transition: transform ease-in-out 0.15s;
+        transform: translateX(50px);
+    }
+}
+
+.file:hover {
+    .delete {
+        transform: translateX(0px);
+    }
+}

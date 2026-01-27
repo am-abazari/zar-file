@@ -5,7 +5,7 @@ import {v4 as uuidv4} from "uuid";
 
 // components
 import Hero from "@components/Hero/Hero";
-import File from "@components/File";
+import File from "@components/File/File";
 import CircleShadow from "@components/CircleShadow";
 
 // icons
