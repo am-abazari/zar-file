@@ -1,6 +1,6 @@
 'use client'
 
-import { useState} from "react";
+import {useState} from "react";
 import {v4 as uuidv4} from "uuid";
 
 // components
@@ -17,10 +17,15 @@ const Page = () => {
     const fileInputHandler = (e) => {
         const tempFiles = []
         for (let i = 0; i < e.target.files.length; i++) {
+            e.target.files[i].uuid = uuidv4();
             tempFiles.push(e.target.files[i]);
         }
         setFiles(tempFiles);
     };
+
+    const deleteHandler = (uuid) => {
+        setFiles(files.filter((f) => f.uuid !== uuid));
+    }
 
     return (
         <>
@@ -38,7 +43,6 @@ const Page = () => {
             </Hero>
 
 
-
             <div className={"flex flex-wrap gap-5 w-full mt-32"}>
                 <div
                     className={"basis-(--size-mobile-medium) grow bg-(--color-white-blur) rounded-xl p-8 shadow-lg backdrop-blur-xl"}>
@@ -54,8 +58,10 @@ const Page = () => {
                         adipisicing elit. Aliquid amet consectetur deserunt impedit incidunt, laudantium nemo, nisi
                         optio, possimus quasi quia recusandae tenetur voluptatem. Id iure minus quia quo sequi!</p>
                 </div>
+
+
                 <div
-                    className={"mt-15 basis-(--size-mobile-medium) grow border rounded-xl border-dashed border-(--color-primary-light) border-spacing-40 bg-(--color-white-blur) backdrop-blur-xl p-8 py-16"}>
+                    className={"mt-15 relative basis-(--size-mobile-medium) grow border rounded-xl border-dashed border-(--color-primary-light) border-spacing-40 bg-(--color-white-blur) backdrop-blur-xl p-8 py-16  hover:bg-(--color-whiter-blur) transition-all"}>
                     <h3 className={"font-bold text-(--text-primary) text-xl flex justify-center items-center gap-4"}>
                         <span className={"text-3xl"}><MaterialSymbolsArrowUploadProgressRounded/></span> UPLOAD</h3>
                     <div className={'mt-5 text-(--text-secondary) leading- text-center'}>
@@ -63,16 +69,16 @@ const Page = () => {
                         <p>SVG, PNG, ZIP, ...</p>
                     </div>
                     <input onChange={fileInputHandler} type="file"
-                           className={'absolute w-full h-full left-0 top-0 opacity-0'} draggable={true}
+                           className={'absolute w-full h-full left-0 top-0 cursor-pointer z-10 opacity-0'} draggable={true}
                            multiple={true}/>
                 </div>
                 <CircleShadow size={"small"} className={"bg-red-900 mt-50"}/>
             </div>
+
+            {/* Links */}
             <div className={"w-full mt-10 flex gap-4 flex-wrap"}>
-                {files.map(file => (<File key={uuidv4()} file={file} />))}
+                {files.map(file => (<File deleteHandler={deleteHandler} key={file.uuid} id={file.uuid} file={file}/>))}
             </div>
-
-
         </>
     )
 }

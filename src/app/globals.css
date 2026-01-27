@@ -8,7 +8,10 @@
     --color-primary-dark: hsl(232, 86%, 60%);
     --color-primary-light: hsl(232, 86%, 70%);
     --color-white-blur: rgba(255, 255, 255, 5%);
+    --color-whiter-blur: rgba(255, 255, 255, 8%);
     --color-danger: hsl(0, 42%, 52%);
+    --color-danger-dark: hsl(0, 42%, 15%);
+
 
 
     /* Texts */
