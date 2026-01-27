@@ -34,12 +34,12 @@ const formats = {
         component: (<Category.Video/>)
     },
     javascript: {
-        endsWith: ["js", "jsx"],
+        endsWith: ["js"],
         theme: "#FFCA28",
         component: (<Category.Javascript/>)
     },
     typescript: {
-        endsWith: ["ts", "tsx"],
+        endsWith: ["ts"],
         theme: "#0288D1",
         component: (<Category.Typescript/>)
     },
@@ -67,6 +67,21 @@ const formats = {
         endsWith: ["eslint",'eslintrc','eslintignore'],
         theme: "#4052B4",
         component: (<Category.Eslint /> )
+    },
+    jsx: {
+        endsWith: ["jsx"],
+        theme: "#00BCD4",
+        component: (<Category.ReactJsx /> )
+    },
+    tsx: {
+        endsWith: ["tsx"],
+        theme: "#0288D1",
+        component: (<Category.ReactTsx /> )
+    },
+    css: {
+        endsWith: ["css"],
+        theme: "#7E57C2",
+        component: (<Category.Css /> )
     },
 }
 
