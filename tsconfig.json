@@ -27,7 +27,8 @@
       "@configs/*": ["./src/utils/configs/*"],
       "@assets/*": ["./src/assets/*"],
       "@icons/*": ["./src/assets/icons/*"],
-      "@images/*": ["./src/assets/images/*"]
+      "@images/*": ["./src/assets/images/*"],
+      "@api/*": ["./src/api/*"]
     }
   },
   "include": [

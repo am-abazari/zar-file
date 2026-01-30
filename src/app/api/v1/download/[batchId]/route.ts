@@ -87,7 +87,7 @@ export async function GET(
       // Use Response + ReadableStream wrapper (safest for Next.js App Router)
       const stream = fsSync.createReadStream(singleFilePath);
 
-      return new NextResponse(stream as any, {
+      return new NextResponse(stream as never, {
         // ← type cast (unavoidable in many Next.js versions)
         status: 200,
         headers: {
