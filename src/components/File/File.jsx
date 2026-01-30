@@ -13,13 +13,7 @@ import BitcoinIconsCrossOutline from "@icons/BitcoinIconsCrossOutline";
 // functions
 import sleep from "@functions/sleep";
 
-const File = ({
-  file,
-  deleteHandler,
-  lock = false,
-  progress = 100,
-  ...props
-}) => {
+const File = ({ file, deleteHandler, lock = false, ...props }) => {
   const split = file.name.split(".");
   const type = split[split.length - 1].toLowerCase();
   const [theme, setTheme] = useState("");

@@ -9,6 +9,7 @@ const Button = ({
   icon,
   type = "button",
   status = "primary",
+  show = true,
   ...props
 }) => {
   const styles = {
@@ -31,36 +32,38 @@ const Button = ({
   const initialCLasses =
     "px-8 w-max py-2 rounded-lg  transition-all cursor-pointer text-center flex items-center justify-center gap-3";
 
-  if (type === "link")
-    return (
-      <Link
-        className={clsx(
-          styles[variant],
-          statuses[status],
-          initialCLasses,
-          className,
-        )}
-        {...props}
-      >
-        {icon}
-        {children}
-      </Link>
-    );
-  else
-    return (
-      <button
-        className={clsx(
-          styles[variant],
-          statuses[status],
-          initialCLasses,
-          className,
-        )}
-        {...props}
-      >
-        {icon}
-        {children}
-      </button>
-    );
+  if (show) {
+    if (type === "link")
+      return (
+        <Link
+          className={clsx(
+            styles[variant],
+            statuses[status],
+            initialCLasses,
+            className,
+          )}
+          {...props}
+        >
+          {icon}
+          {children ? children : <>&nbsp;</>}
+        </Link>
+      );
+    else
+      return (
+        <button
+          className={clsx(
+            styles[variant],
+            statuses[status],
+            initialCLasses,
+            className,
+          )}
+          {...props}
+        >
+          {icon}
+          {children}
+        </button>
+      );
+  }
 };
 
 export default Button;

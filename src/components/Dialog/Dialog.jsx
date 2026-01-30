@@ -52,9 +52,10 @@ const Dialog = ({
             className={clsx(
               className,
               sizes[size],
-              "bg-(--background) p-5 rounded-xl max-h-(--dialog-height) relative overflow-y-auto",
+              "bg-(--background)/85 backdrop-blur-xl p-5 rounded-xl max-h-(--dialog-height) relative overflow-y-auto",
             )}
           >
+            <div className="w-40 h-20 bg-(--color-primary) rounded-full blur-[100px] absolute top-10 left-10 m-auto"></div>
             <button
               className={"absolute top-4 right-4 text-xl cursor-pointer"}
               onClick={close}

@@ -8,14 +8,30 @@ import File from "@components/File/File";
 import CircleShadow from "@components/CircleShadow";
 import Button from "@components/Button";
 import Dialog from "@components/Dialog/Dialog";
+import Success from "@components/Upload/Success";
 
 // icons
 import MaterialSymbolsArrowUploadProgressRounded from "@icons/MaterialSymbolsArrowUploadProgressRounded";
 import MaterialSymbolsUploadRounded from "@icons/MaterialSymbolsUploadRounded";
 import UUIDSetter from "@helper/UUIDSetter";
+import LineMdDownloadingLoop from "@icons/LineMdDownloadingLoop";
+
+// api
+import useUpload from "@api/useUpload";
+import Fail from "../../components/Upload/Fail";
+import GetDomain from "../../utils/helper/GetDomain";
+
+// constants
+const InitialApiResponse = {
+  success: false,
+  error: false,
+};
 
 const Page = () => {
   const [files, setFiles] = useState([]);
+  const [isUploading, setIsUploading] = useState(false);
+  const [uploaded, setUploaded] = useState(false);
+  const [response, setResponse] = useState(InitialApiResponse);
 
   // dialog handling
   const [dialogOpen, setDialogOpen] = useState(false);
@@ -28,15 +44,37 @@ const Page = () => {
   };
 
   useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
     if (!files.length) setDialogOpen(false);
+    setUploaded(false);
+    setResponse(InitialApiResponse);
   }, [files]);
 
   const deleteHandler = (uuid) => {
     setFiles(files.filter((f) => f.uuid !== uuid));
   };
 
-  const uploadHandler = () => {};
+  const uploadHandler = async () => {
+    setIsUploading(true);
+
+    try {
+      // eslint-disable-next-line react-hooks/rules-of-hooks
+      const Response = await useUpload(files);
+      if (Response.status === 200) {
+        setResponse({
+          success: Response.data.batchId,
+          error: false,
+        });
+      }
+    } catch (error) {
+      setResponse({
+        success: false,
+        error: error.message,
+      });
+    } finally {
+      setIsUploading(false);
+      setUploaded(true);
+    }
+  };
 
   return (
     <>
@@ -133,34 +171,52 @@ const Page = () => {
 
       {/* Links */}
       <Dialog size={"fit"} status={dialogOpen} close={closeHandler}>
-        <div className="flex justify-center items-center gap-5 mt-10">
-          <Button
-            onClick={uploadHandler}
-            variant={"fill"}
-            icon={<MaterialSymbolsUploadRounded />}
-            className={`basis-64`}
-          >
-            Upload All
-          </Button>
-          <Button
-            status={"danger"}
-            onClick={() => setFiles([])}
-            variant={"border"}
-            className={`basis-48`}
-          >
-            Clear All
-          </Button>
-        </div>
-        <div className={"w-full mt-10 flex gap-4 flex-wrap"}>
-          {files.map((file) => (
-            <File
-              deleteHandler={deleteHandler}
-              key={file.uuid}
-              id={file.uuid}
-              file={file}
-            />
-          ))}
-        </div>
+        {response.success ? (
+          <Success domain={GetDomain()} response={response.success} />
+        ) : response.error ? (
+          <Fail response={response.error} />
+        ) : (
+          <div className="flex justify-center items-center gap-5 mt-10">
+            <Button
+              show={!uploaded}
+              disabled={isUploading}
+              onClick={uploadHandler}
+              variant={"fill"}
+              icon={
+                isUploading ? (
+                  <LineMdDownloadingLoop className={"text-xl rotate-180"} />
+                ) : (
+                  <MaterialSymbolsUploadRounded className={"text-xl"} />
+                )
+              }
+              className={`basis-64`}
+            >
+              {!isUploading && "Upload All"}
+            </Button>
+            <Button
+              show={!isUploading && !uploaded}
+              status={"danger"}
+              onClick={() => setFiles([])}
+              variant={"border"}
+              className={`basis-48`}
+            >
+              Clear All
+            </Button>
+          </div>
+        )}
+        {!uploaded && (
+          <div className={"w-full mt-10 flex gap-4 flex-wrap"}>
+            {files.map((file) => (
+              <File
+                deleteHandler={deleteHandler}
+                key={file.uuid}
+                id={file.uuid}
+                file={file}
+                lock={isUploading || uploaded}
+              />
+            ))}
+          </div>
+        )}
       </Dialog>
     </>
   );
