@@ -8,6 +8,23 @@ const BASE_UPLOAD_DIR = process.env.UPLOAD_DIR
   ? path.resolve(process.env.UPLOAD_DIR)
   : path.join(process.cwd(), "uploads", "private");
 
+// Helper to get mime type (unchanged)
+function getMimeType(filename: string): string {
+  const ext = path.extname(filename).toLowerCase();
+  const mimeTypes: Record<string, string> = {
+    ".jpg": "image/jpeg",
+    ".jpeg": "image/jpeg",
+    ".png": "image/png",
+    ".gif": "image/gif",
+    ".pdf": "application/pdf",
+    ".txt": "text/plain",
+    ".doc": "application/msword",
+    ".docx":
+      "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+  };
+  return mimeTypes[ext] || "application/octet-stream";
+}
+
 export async function GET(
   request: Request,
   { params }: { params: Promise<{ batchId: string }> },
@@ -45,7 +62,7 @@ export async function GET(
       }),
     );
 
-    const actualFiles = fileStats.filter(Boolean) as string[];
+    const actualFiles = fileStats.filter((f): f is string => f !== null);
 
     if (actualFiles.length === 0) {
       return NextResponse.json(
@@ -58,13 +75,20 @@ export async function GET(
       `[Download] Batch ${batchId}: ${actualFiles.length} files found`,
     );
 
+    // ────────────────────────────────────────────────
+    // Single file → stream it directly (most efficient)
+    // ────────────────────────────────────────────────
     if (actualFiles.length === 1) {
-      const singleFileName = actualFiles[0];
+      const singleFileName = actualFiles[0]!;
       const singleFilePath = path.join(batchDir, singleFileName);
 
       const fileStat = await fs.stat(singleFilePath);
 
-      return new NextResponse(fsSync.createReadStream(singleFilePath), {
+      // Use Response + ReadableStream wrapper (safest for Next.js App Router)
+      const stream = fsSync.createReadStream(singleFilePath);
+
+      return new NextResponse(stream as any, {
+        // ← type cast (unavoidable in many Next.js versions)
         status: 200,
         headers: {
           "Content-Type": getMimeType(singleFileName),
@@ -76,6 +100,9 @@ export async function GET(
       });
     }
 
+    // ────────────────────────────────────────────────
+    // Multiple files → create ZIP on-the-fly
+    // ────────────────────────────────────────────────
     const archive = archiver("zip", { zlib: { level: 6 } });
 
     archive.on("error", (err) => {
@@ -83,10 +110,10 @@ export async function GET(
       throw err;
     });
 
-    const chunks: Uint8Array[] = [];
+    const chunks: Buffer[] = [];
     let totalSize = 0;
 
-    archive.on("data", (chunk) => {
+    archive.on("data", (chunk: Buffer) => {
       chunks.push(chunk);
       totalSize += chunk.length;
     });
@@ -103,11 +130,9 @@ export async function GET(
     await archive.finalize();
 
     const zipBuffer = Buffer.concat(chunks);
-    const zipBlob = new Blob([zipBuffer]);
-
     const zipFileName = `batch-${batchId.slice(0, 8)}-${actualFiles.length}files.zip`;
 
-    return new NextResponse(zipBlob, {
+    return new NextResponse(zipBuffer, {
       status: 200,
       headers: {
         "Content-Type": "application/zip",
@@ -116,34 +141,20 @@ export async function GET(
         "Cache-Control": "no-cache",
       },
     });
-  } catch (err: any) {
+  } catch (err: unknown) {
+    // ← fixed: unknown instead of any
     console.error("[Download Error]", batchId, err);
 
-    if (err.code === "ENOENT") {
+    if (err instanceof Error && "code" in err && err.code === "ENOENT") {
       return NextResponse.json({ error: "Batch not found" }, { status: 404 });
     }
 
+    const message = err instanceof Error ? err.message : "Unknown error";
     return NextResponse.json(
-      { error: "Download failed", details: err.message },
+      { error: "Download failed", details: message },
       { status: 500 },
     );
   }
-}
-
-function getMimeType(filename: string): string {
-  const ext = path.extname(filename).toLowerCase();
-  const mimeTypes: Record<string, string> = {
-    ".jpg": "image/jpeg",
-    ".jpeg": "image/jpeg",
-    ".png": "image/png",
-    ".gif": "image/gif",
-    ".pdf": "application/pdf",
-    ".txt": "text/plain",
-    ".doc": "application/msword",
-    ".docx":
-      "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-  };
-  return mimeTypes[ext] || "application/octet-stream";
 }
 
 export const maxDuration = 60;
