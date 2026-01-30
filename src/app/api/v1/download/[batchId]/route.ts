@@ -30,18 +30,14 @@ export async function GET(
   { params }: { params: Promise<{ batchId: string }> },
 ) {
   const { batchId } = await params;
-
-  if (
-    !/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(
-      batchId,
-    )
-  ) {
+  if (!/^[a-zA-Z0-9]{6}$/.test(batchId)) {
     return NextResponse.json(
       { error: "Invalid batch ID format" },
       { status: 400 },
     );
   }
 
+  console.log(batchId);
   const batchDir = path.join(BASE_UPLOAD_DIR, batchId);
 
   try {

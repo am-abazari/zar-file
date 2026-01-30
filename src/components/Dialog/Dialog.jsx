@@ -2,7 +2,9 @@ import clsx from "clsx";
 
 // icons
 import BitcoinIconsCrossOutline from "@icons/BitcoinIconsCrossOutline";
-import CircleShadow from "../CircleShadow";
+
+// components
+import CircleShadow from "@components/CircleShadow";
 
 /* [INFO]
 custom : you should first set size = "custom" then use custom =" YOUR CUSTOM className FOR SIZE"
