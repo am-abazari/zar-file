@@ -1,10 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
 import path from "path";
 import fs from "fs/promises";
-import { v4 as uuidv4 } from "uuid";
 
 // functions
 import SanitizeFilename from "@functions/SanitizeFilename";
+import NanoID from "@functions/nanoID";
 
 const BASE_UPLOAD_DIR = process.env.UPLOAD_DIR
   ? path.join(process.cwd(), process.env.UPLOAD_DIR)
@@ -16,7 +16,7 @@ const MAX_FILE_SIZE: number = process.env.MAX_FILE_SIZE
 export async function POST(req: NextRequest) {
   try {
     // 1. Create unique batch folder
-    const batchId = uuidv4();
+    const batchId = NanoID();
     const batchDir = path.join(BASE_UPLOAD_DIR, batchId);
     await fs.mkdir(batchDir, { recursive: true });
 
