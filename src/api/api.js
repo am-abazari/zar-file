@@ -10,7 +10,7 @@ const API_VERSION = process.env.NEXT_PUBLIC_API_VERSION
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL
   ? process.env.NEXT_PUBLIC_BASE_URL
   : "http://localhost:3000";
-
+console.log(BASE_URL);
 const api = axios.create({
   baseURL: `${BASE_URL}/${API_URL}/${API_VERSION}`,
 });

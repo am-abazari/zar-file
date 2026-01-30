@@ -15,10 +15,8 @@ const Page = async ({ params }) => {
   const { batchId } = await params;
   try {
     // eslint-disable-next-line react-hooks/rules-of-hooks
-    const data = await useDownload(batchId);
-    console.log(data);
+    await useDownload(batchId);
   } catch (error) {
-    console.error(error);
     return notFound();
   }
 
