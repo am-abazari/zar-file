@@ -8,7 +8,7 @@
   }
 }
 
-.file:hover {
+.file[data-lock="false"]:hover {
   border-color: var(--color-danger) !important;
   background: linear-gradient(
     to right,
@@ -19,4 +19,7 @@
   .delete {
     transform: translateX(0px);
   }
+}
+.file[data-lock="true"]:hover {
+  cursor: default;
 }
