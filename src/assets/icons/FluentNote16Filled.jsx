@@ -1,4 +1,4 @@
-function FluentNote16Filled(props: SVGProps<SVGSVGElement>) {
+function FluentNote16Filled(props) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
