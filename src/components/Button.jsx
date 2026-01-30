@@ -12,14 +12,14 @@ const Button = ({
   ...props
 }) => {
   const styles = {
-    border: `border  text-(--text-secondary) hover:text-(--text-secondary-light)`,
+    border: `border  `,
     fill: ` text-(--text-secondary-light) `,
   };
   const statuses = {
     primary:
       variant === "border"
-        ? "border-(--color-primary)  hover:bg-(--color-primary)"
-        : "bg-(--color-primary) hover:bg-(--color-primary-dark)",
+        ? "border-(--color-primary)  hover:bg-(--color-primary) text-(--text-secondary) hover:text-(--text-secondary-light)"
+        : "bg-(--color-primary) hover:bg-(--color-primary-dark) text-(--text-secondary) hover:text-(--text-secondary-light)",
     danger:
       variant === "border"
         ? `border border-transparent hover:border-(--color-danger-light) text-(--color-danger-light)`
