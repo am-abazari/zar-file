@@ -1,6 +1,4 @@
-import React from "react";
-
-export function GrommetIconsGithub(props) {
+function GrommetIconsGithub(props) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

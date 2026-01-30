@@ -1,6 +1,4 @@
-import React, { SVGProps } from "react";
-
-export function FluentNote16Filled(props: SVGProps<SVGSVGElement>) {
+function FluentNote16Filled(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

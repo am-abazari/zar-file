@@ -1,6 +1,4 @@
-import React from "react";
-
-export function MaterialIconThemeExe(props) {
+function MaterialIconThemeExe(props) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -18,7 +16,7 @@ export function MaterialIconThemeExe(props) {
   );
 }
 
-export function MaterialIconThemeGit(props) {
+function MaterialIconThemeGit(props) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -36,7 +34,7 @@ export function MaterialIconThemeGit(props) {
   );
 }
 
-export function MaterialIconThemeImage(props) {
+function MaterialIconThemeImage(props) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -54,7 +52,7 @@ export function MaterialIconThemeImage(props) {
   );
 }
 
-export function MaterialIconThemeJavascript(props) {
+function MaterialIconThemeJavascript(props) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -72,7 +70,7 @@ export function MaterialIconThemeJavascript(props) {
   );
 }
 
-export function MaterialIconThemeJson(props) {
+function MaterialIconThemeJson(props) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -90,7 +88,7 @@ export function MaterialIconThemeJson(props) {
   );
 }
 
-export function MaterialIconThemePdf(props) {
+function MaterialIconThemePdf(props) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -108,7 +106,7 @@ export function MaterialIconThemePdf(props) {
   );
 }
 
-export function MaterialIconThemeZip(props) {
+function MaterialIconThemeZip(props) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -126,7 +124,7 @@ export function MaterialIconThemeZip(props) {
   );
 }
 
-export function MaterialIconThemeVideo(props) {
+function MaterialIconThemeVideo(props) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -144,7 +142,7 @@ export function MaterialIconThemeVideo(props) {
   );
 }
 
-export function MaterialIconThemeTypescript(props) {
+function MaterialIconThemeTypescript(props) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -162,7 +160,7 @@ export function MaterialIconThemeTypescript(props) {
   );
 }
 
-export function MaterialIconThemeTaskfile(props) {
+function MaterialIconThemeTaskfile(props) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -179,7 +177,7 @@ export function MaterialIconThemeTaskfile(props) {
   );
 }
 
-export function MaterialIconThemeDocker(props) {
+function MaterialIconThemeDocker(props) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -197,7 +195,7 @@ export function MaterialIconThemeDocker(props) {
   );
 }
 
-export function MaterialIconThemeMdsvex(props) {
+function MaterialIconThemeMdsvex(props) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -215,7 +213,7 @@ export function MaterialIconThemeMdsvex(props) {
   );
 }
 
-export function MaterialIconThemeLicense(props) {
+function MaterialIconThemeLicense(props) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -233,7 +231,7 @@ export function MaterialIconThemeLicense(props) {
   );
 }
 
-export function MaterialIconThemeEslint(props) {
+function MaterialIconThemeEslint(props) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -255,7 +253,7 @@ export function MaterialIconThemeEslint(props) {
   );
 }
 
-export function MaterialIconThemeReact(props) {
+function MaterialIconThemeReact(props) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -282,7 +280,7 @@ export function MaterialIconThemeReact(props) {
   );
 }
 
-export function MaterialIconThemeReactTs(props) {
+function MaterialIconThemeReactTs(props) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -309,7 +307,7 @@ export function MaterialIconThemeReactTs(props) {
   );
 }
 
-export function MaterialIconThemeCss(props) {
+function MaterialIconThemeCss(props) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
