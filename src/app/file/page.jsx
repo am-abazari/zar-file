@@ -9,6 +9,7 @@ import CircleShadow from "@components/CircleShadow";
 import Button from "@components/Button";
 import Dialog from "@components/Dialog/Dialog";
 import Success from "@components/Upload/Success";
+import Fail from "@components/Upload/Fail";
 
 // icons
 import MaterialSymbolsArrowUploadProgressRounded from "@icons/MaterialSymbolsArrowUploadProgressRounded";
@@ -18,8 +19,9 @@ import LineMdDownloadingLoop from "@icons/LineMdDownloadingLoop";
 
 // api
 import useUpload from "@api/useUpload";
-import Fail from "../../components/Upload/Fail";
-import GetDomain from "../../utils/helper/GetDomain";
+
+// utils
+import GetDomain from "@utils/helper/GetDomain";
 
 // constants
 const InitialApiResponse = {

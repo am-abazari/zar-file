@@ -9,4 +9,4 @@ function SanitizeFilename(filename: string): string {
     .trim();
 }
 
-export default SanitizeFilename
+export default SanitizeFilename;
