@@ -13,27 +13,37 @@ import BitcoinIconsCrossOutline from "@icons/BitcoinIconsCrossOutline";
 // functions
 import sleep from "@functions/sleep";
 
-const File = ({ file, deleteHandler, ...props }) => {
+const File = ({
+  file,
+  deleteHandler,
+  lock = false,
+  progress = 100,
+  ...props
+}) => {
   const split = file.name.split(".");
   const type = split[split.length - 1].toLowerCase();
   const [theme, setTheme] = useState("");
   let link = useRef(null);
 
   const clickHandler = async () => {
-    link.current.style.transform = "translateX(-100px)";
-    link.current.style.opacity = "0";
-    await sleep(200);
-    deleteHandler(file.uuid);
+    if (!lock) {
+      link.current.style.transform = "translateX(-100px)";
+      link.current.style.opacity = "0";
+      await sleep(200);
+      deleteHandler(file.uuid);
+    }
   };
 
   return (
     <button
+      disabled={lock}
+      data-lock={lock}
       ref={link}
       onClick={clickHandler}
       style={{ borderColor: theme }}
       className={clsx(
         styles.file,
-        " cursor-pointer flex justify-between items-center basis-72 grow min-w-max p-5 rounded-lg backdrop-blur-xl shadow-lg bg-(--color-white-blur) border border-dashed md:text-base text-sm ",
+        " cursor-pointer relative flex justify-between items-center basis-72 grow min-w-max p-5 rounded-lg backdrop-blur-xl shadow-lg bg-(--color-white-blur) border border-dashed md:text-base text-sm ",
       )}
       {...props}
     >
