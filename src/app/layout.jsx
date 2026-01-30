@@ -12,17 +12,17 @@ import Footer from "@components/Footer";
 // });
 
 export const metadata = {
-    title: "Zar File | Home",
-    description: "Platform for Downloading and Uploading Files",
+  title: "Zar File | Home",
+  description: "Platform for Downloading and Uploading Files",
 };
 
-export default function RootLayout({children}) {
-    return (
-        <html lang="en">
-        <body className={`flex flex-col justify-between items-center`}>
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en">
+      <body className={`flex flex-col justify-between items-center`}>
         {children}
         <Footer />
-        </body>
-        </html>
-    );
+      </body>
+    </html>
+  );
 }

@@ -1,18 +1,22 @@
 .file {
-    overflow: hidden;
-    transition: all ease-in-out 0.15s;
+  overflow: hidden;
+  transition: all ease-in-out 0.15s;
 
-    .delete {
-        transition: transform ease-in-out 0.15s;
-        transform: translateX(50px);
-    }
+  .delete {
+    transition: transform ease-in-out 0.15s;
+    transform: translateX(50px);
+  }
 }
 
 .file:hover {
-    border-color: var(--color-danger) !important;
-    background: linear-gradient(to right , var(--color-danger-dark), transparent 70%) ;
+  border-color: var(--color-danger) !important;
+  background: linear-gradient(
+    to right,
+    var(--color-danger-dark),
+    transparent 70%
+  );
 
-    .delete {
-        transform: translateX(0px);
-    }
+  .delete {
+    transform: translateX(0px);
+  }
 }
