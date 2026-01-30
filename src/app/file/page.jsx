@@ -12,7 +12,7 @@ import Dialog from "@components/Dialog/Dialog";
 // icons
 import MaterialSymbolsArrowUploadProgressRounded from "@icons/MaterialSymbolsArrowUploadProgressRounded";
 import MaterialSymbolsUploadRounded from "@icons/MaterialSymbolsUploadRounded";
-import UUIDSetter from "../../utils/helper/UUIDSetter";
+import UUIDSetter from "@helper/UUIDSetter";
 
 const Page = () => {
   const [files, setFiles] = useState([]);
