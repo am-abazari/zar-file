@@ -140,8 +140,9 @@ const Page = () => {
           }
         >
           <h3
+            style={{ fontSize: "var(--size-large)" }}
             className={
-              "font-bold text-(--text-primary) text-xl flex justify-center items-center gap-4"
+              "font-bold text-(--text-primary) flex justify-center items-center gap-4"
             }
           >
             <span className={"text-3xl"}>
@@ -149,7 +150,10 @@ const Page = () => {
             </span>{" "}
             UPLOAD
           </h3>
-          <div className={"mt-5 text-(--text-secondary) leading- text-center"}>
+          <div
+            style={{ fontSize: "var(--size-medium)" }}
+            className={"mt-5 text-(--text-secondary)  text-center"}
+          >
             <p>
               <b>Click Here</b> to Upload or drag and drop
             </p>

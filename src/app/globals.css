@@ -13,6 +13,7 @@
   --color-danger: hsl(0, 42%, 52%);
   --color-danger-dark: hsl(0, 42%, 15%);
   --color-danger-light: hsl(0, 68%, 56%);
+  --color-success: hsl(120, 58%, 65%);
 
   /* Texts */
   --text-primary: hsl(232, 86%, 64%);
@@ -39,6 +40,8 @@
   --size-mobile-medium: 25rem;
   --size-monitor: 75rem;
   --dialog-height: calc(100vh - 10rem);
+  --size-medium: clamp(0.8125rem, 0.7321rem + 0.3571vw, 1rem);
+  --size-large: clamp(1rem, 0.8929rem + 0.4762vw, 1.25rem);
 }
 
 @layer base {

@@ -1,0 +1,12 @@
+.link {
+  font-size: clamp(0.875rem, 0.7143rem + 0.7143vw, 1.25rem);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+.share,
+.copy,
+.message {
+  font-size: clamp(0.875rem, 0.7143rem + 0.7143vw, 1.25rem);
+}
