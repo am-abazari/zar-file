@@ -1,5 +1,4 @@
 import clsx from "clsx";
-import { useCallback, useState } from "react";
 
 // icons
 import BitcoinIconsCrossOutline from "@icons/BitcoinIconsCrossOutline";
