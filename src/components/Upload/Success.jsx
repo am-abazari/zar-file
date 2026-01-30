@@ -12,7 +12,7 @@ import styles from "./Success.module.css";
 import sleep from "@functions/sleep";
 
 // helper
-import copyText from "@helper/CoypText";
+import copyText from "@helper/CopyText";
 
 const Success = ({ response, domain }) => {
   const DOWNLOAD_URL = `${domain}/download/${response}`;

@@ -1,4 +1,4 @@
-export async function copyText(text) {
+async function copyText(text) {
   try {
     if (navigator.clipboard && window.isSecureContext) {
       await navigator.clipboard.writeText(text);
