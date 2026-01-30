@@ -39,7 +39,7 @@ const Success = ({ response, domain }) => {
         <p className={clsx("font-bold mb-4 text-left", styles.share)}>
           Share URL :{" "}
         </p>
-        <div className={"flex gap-2 w-full"} onClick={copyHandler}>
+        <div className={"flex gap-2 w-full items-center"} onClick={copyHandler}>
           <div
             className={clsx(
               " cursor-pointer bg-(--color-whiter-blur) md:p-5 p-2 rounded-lg grow text-left",

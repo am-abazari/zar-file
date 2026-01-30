@@ -37,7 +37,7 @@ const File = ({ file, deleteHandler, lock = false, ...props }) => {
       style={{ borderColor: theme }}
       className={clsx(
         styles.file,
-        " cursor-pointer relative flex justify-between items-center basis-72 grow min-w-max p-5 rounded-lg backdrop-blur-xl shadow-lg bg-(--color-white-blur) border border-dashed md:text-base text-sm ",
+        " cursor-pointer relative flex justify-between items-center basis-72 grow min-w-max p-5 rounded-lg backdrop-blur-xl shadow-lg bg-(--color-white-blur) border border-dashed ",
       )}
       {...props}
     >

@@ -182,7 +182,7 @@ const Page = () => {
         ) : response.error ? (
           <Fail close={closeHandler} response={response.error} />
         ) : (
-          <div className="flex justify-center items-center gap-5 mt-10">
+          <div className="flex justify-center flex-wrap items-center gap-5 mt-10">
             <Button
               show={!uploaded}
               disabled={isUploading}
