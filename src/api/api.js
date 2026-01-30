@@ -1,10 +1,10 @@
 import axios from "axios";
 
-const API_URL = process.env.REACT_APP_API_URL
-  ? process.env.REACT_APP_API_URL
+const API_URL = process.env.NEXT_PUBLIC_API_URL
+  ? process.env.NEXT_PUBLIC_API_URL
   : "/api";
-const API_VERSION = process.env.REACT_APP_API_VERSION
-  ? process.env.REACT_APP_API_VERSION
+const API_VERSION = process.env.NEXT_PUBLIC_API_VERSION
+  ? process.env.NEXT_PUBLIC_API_VERSION
   : "v1";
 
 const api = axios.create({
