@@ -1,30 +1,34 @@
-import { memo, useEffect, useState } from "react";
-
-// icons
-import Category from "@icons/Category";
+import { memo, useEffect } from "react";
 
 // configs
 import formats from "@configs/formats";
+import { DEFAULT_ICON, DEFAULT_THEME } from "@configs/constants";
 
-const IconMaker = ({ type, setTheme }) => {
-  let [component, setComponent] = useState(<Category.File />);
-  let theme = "#4EB6AB";
-
-  for (let i = 0; i < Object.keys(formats).length; i++) {
-    const key = Object.keys(formats)[i];
+function resolveIcon(type) {
+  for (const key in formats) {
     const value = formats[key];
     if (value.endsWith.includes(type)) {
-      setComponent(value.component);
-      theme = value.theme;
-      break;
+      return {
+        Icon: value.component,
+        theme: value.theme,
+      };
     }
   }
 
+  return {
+    Icon: DEFAULT_ICON,
+    theme: DEFAULT_THEME,
+  };
+}
+
+const IconMaker = ({ type, setTheme }) => {
+  const { Icon, theme } = resolveIcon(type);
+
   useEffect(() => {
     setTheme(theme);
-  }, []);
+  }, [theme, setTheme]);
 
-  return <>{component}</>;
+  return <Icon />;
 };
 
 export default memo(IconMaker);
