@@ -3,6 +3,18 @@ import clsx from "clsx";
 // icons
 import BitcoinIconsCrossOutline from "@icons/BitcoinIconsCrossOutline";
 
+/* [INFO]
+custom : you should first set size = "custom" then use custom =" YOUR CUSTOM className FOR SIZE"
+close : a function to close the dialog
+status : true = dialog is open / false = dialog is close
+
+Parent.jsx
+const [open, setOpen] = useState(false)
+const closeHandler = () => setOpen(false)
+
+<Dialog close={closeHandler} status={open}> ... </Dialog>
+ */
+
 const Dialog = ({
   className,
   size = "medium",
