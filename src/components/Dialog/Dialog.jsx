@@ -2,6 +2,7 @@ import clsx from "clsx";
 
 // icons
 import BitcoinIconsCrossOutline from "@icons/BitcoinIconsCrossOutline";
+import CircleShadow from "../CircleShadow";
 
 /* [INFO]
 custom : you should first set size = "custom" then use custom =" YOUR CUSTOM className FOR SIZE"
@@ -52,10 +53,10 @@ const Dialog = ({
             className={clsx(
               className,
               sizes[size],
-              "bg-(--background)/85 backdrop-blur-xl p-5 rounded-xl max-h-(--dialog-height) relative overflow-y-auto",
+              "bg-(--background)/95 backdrop-blur-xl p-5 rounded-xl max-h-(--dialog-height) relative overflow-y-auto",
             )}
           >
-            <div className="w-40 h-20 bg-(--color-primary) rounded-full blur-[100px] absolute top-10 left-10 m-auto"></div>
+            <CircleShadow className={"bg-(--color-primary-light)"} />
             <button
               className={"absolute top-4 right-4 text-xl cursor-pointer"}
               onClick={close}
