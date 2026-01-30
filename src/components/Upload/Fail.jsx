@@ -1,4 +1,6 @@
-const Fail = ({ response }) => {
+import Button from "@components/Button";
+
+const Fail = ({ response, close }) => {
   return (
     <div>
       <p
@@ -9,6 +11,15 @@ const Fail = ({ response }) => {
         An Error Occurred While Uploading Files
       </p>
       <p className={"text-center font-bold "}>{response}</p>
+
+      <Button
+        variant={"border"}
+        status={"danger"}
+        className={"m-auto mt-10"}
+        onClick={close}
+      >
+        Back
+      </Button>
     </div>
   );
 };

@@ -176,7 +176,7 @@ const Page = () => {
         {response.success ? (
           <Success domain={GetDomain()} response={response.success} />
         ) : response.error ? (
-          <Fail response={response.error} />
+          <Fail close={closeHandler} response={response.error} />
         ) : (
           <div className="flex justify-center items-center gap-5 mt-10">
             <Button
