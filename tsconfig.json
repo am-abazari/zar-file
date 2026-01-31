@@ -20,16 +20,17 @@
     ],
     "paths": {
       "@/*": ["./src/*"],
+      "@assets/*": ["./src/assets/*"],
+      "@icons/*": ["./src/assets/icons/*"],
+      "@images/*": ["./src/assets/images/*"],
       "@components/*": ["./src/components/*"],
+      "@layouts/*": ["./src/layouts/*"],
       "@utils/*": ["./src/utils/*"],
       "@helper/*": ["./src/utils/helper/*"],
       "@functions/*": ["./src/utils/functions/*"],
       "@configs/*": ["./src/utils/configs/*"],
-      "@assets/*": ["./src/assets/*"],
-      "@icons/*": ["./src/assets/icons/*"],
-      "@images/*": ["./src/assets/images/*"],
-      "@api/*": ["./src/api/*"],
-      "@layouts/*": ["./src/layouts/*"]
+      "@api/*": ["./src/utils/api/*"],
+      "@axios/*": ["./src/utils/axios/*"]
     }
   },
   "include": [

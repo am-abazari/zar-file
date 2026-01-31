@@ -18,7 +18,7 @@ import UUIDSetter from "@helper/UUIDSetter";
 import LineMdDownloadingLoop from "@icons/LineMdDownloadingLoop";
 
 // api
-import useUpload from "@api/useUpload";
+import upload from "@api/client/upload";
 
 // utils
 import GetDomain from "@utils/helper/GetDomain";
@@ -59,8 +59,7 @@ const Page = () => {
     setIsUploading(true);
 
     try {
-      // eslint-disable-next-line react-hooks/rules-of-hooks
-      const Response = await useUpload(files);
+      const Response = await upload(files);
       if (Response.status === 200) {
         setResponse({
           success: Response.data.batchId,
@@ -83,7 +82,7 @@ const Page = () => {
       <Hero
         title={
           <>
-            <span className={`text-(--text-primary) font-bold`}>Upload</span>{" "}
+            <span className={`text-(--text-primary) font-bold`}>Upload</span>
             <span className={"text-2xl text-(--text-primary) font-thin"}>
               &
             </span>{" "}

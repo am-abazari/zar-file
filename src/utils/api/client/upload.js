@@ -1,7 +1,7 @@
 // api
-import api from "@api/api";
+import api from "@axios/axiosClient";
 
-const useUpload = async (files) => {
+const upload = async (files) => {
   const formData = new FormData();
   files.forEach((f) => {
     formData.append("file", f);
@@ -12,4 +12,4 @@ const useUpload = async (files) => {
     },
   });
 };
-export default useUpload;
+export default upload;
