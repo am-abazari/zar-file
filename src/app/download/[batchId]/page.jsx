@@ -19,6 +19,7 @@ const Page = async ({ params }) => {
     // eslint-disable-next-line react-hooks/rules-of-hooks
     await useDownload(batchId);
   } catch (error) {
+    console.error(error);
     return notFound();
   }
 
