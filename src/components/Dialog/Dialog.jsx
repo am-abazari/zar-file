@@ -25,6 +25,7 @@ const Dialog = ({
   children,
   close,
   status,
+  shadow = true,
   ...props
 }) => {
   const sizes = {
@@ -55,10 +56,10 @@ const Dialog = ({
             className={clsx(
               className,
               sizes[size],
-              "bg-(--background)/95 backdrop-blur-xl p-5 rounded-xl max-h-(--size-dialog-height) relative overflow-y-auto",
+              "bg-(--background)/95 backdrop-blur-xl p-5 rounded-xl max-h-(--dialog-height) relative overflow-y-auto",
             )}
           >
-            <CircleShadow />
+            {shadow && <CircleShadow />}
             <button
               className={"absolute top-4 right-4 text-xl cursor-pointer"}
               onClick={close}
