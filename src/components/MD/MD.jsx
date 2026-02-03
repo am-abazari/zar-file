@@ -44,7 +44,7 @@ const MD = ({ preview = "preview", noteID = "" }) => {
         <LinkCopy
           title={"Share Note"}
           domain={GetDomain()}
-          link={`/note/${noteID}?show=preview`}
+          link={`note/${noteID}?show=preview`}
         ></LinkCopy>
       </Dialog>
     </>
