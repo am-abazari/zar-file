@@ -1,5 +1,5 @@
 .w-md-editor {
-  z-index: 9;
+  z-index: 9 !important;
 
   background-color: transparent;
   box-shadow: none;
@@ -41,4 +41,8 @@
       }
     }
   }
+}
+
+.dialog-heading {
+  font-size: var(--size-dialog-heading);
 }

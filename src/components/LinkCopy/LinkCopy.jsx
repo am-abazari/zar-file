@@ -32,7 +32,7 @@ const LinkCopy = ({ link, title, domain }) => {
   };
   return (
     <div className="md:p-10 p-3">
-      <p className={clsx(`font-bold text-(--color-primary)`, styles.message)}>
+      <p className={clsx(`font-bold text-(--color-primary)`, styles.title)}>
         {title}
       </p>
       <button className={"mt-14 w-full"}>

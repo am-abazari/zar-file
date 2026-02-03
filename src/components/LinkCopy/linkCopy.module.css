@@ -5,8 +5,11 @@
   text-overflow: ellipsis;
   max-width: 100%;
 }
-.share,
-.copy,
-.message {
+.title {
+  font-weight: bold;
   font-size: var(--size-dialog-heading);
+}
+.share,
+.copy {
+  font-size: var(--size-dialog-content);
 }

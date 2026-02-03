@@ -25,7 +25,7 @@ const Dialog = ({
   children,
   close,
   status,
-  shadow = true,
+  shadow = false,
   ...props
 }) => {
   const sizes = {
@@ -56,7 +56,7 @@ const Dialog = ({
             className={clsx(
               className,
               sizes[size],
-              "bg-(--color-bg-dialog)/95 backdrop-blur-xl p-5 rounded-xl max-h-(--size-dialog-height) relative overflow-y-auto",
+              "bg-(--color-bg-dialog) backdrop-blur-xl p-5 rounded-xl max-h-(--size-dialog-height) relative overflow-y-auto",
             )}
           >
             {shadow && <CircleShadow />}

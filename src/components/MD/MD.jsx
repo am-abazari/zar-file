@@ -8,14 +8,16 @@ import "./md.css";
 // components
 import CircleShadow from "@components/CircleShadow";
 import Dialog from "@components/Dialog/Dialog";
+import LinkCopy from "@components/LinkCopy/LinkCopy";
 
 // helper
 import shareNote from "@helper/ShareNote";
+import GetDomain from "@helper/GetDomain";
 
 // configs
 import { CommandsConfig, ExtraCommandsConfig } from "@configs/MDEditor";
 
-const MD = ({ preview = "preview" }) => {
+const MD = ({ preview = "preview", noteID = "" }) => {
   const [value, setValue] = useState("");
 
   const [dialogOpen, setDialogOpen] = useState(false);
@@ -39,7 +41,11 @@ const MD = ({ preview = "preview" }) => {
         status={dialogOpen}
         size={"large"}
       >
-        <h3></h3>
+        <LinkCopy
+          title={"Share Note"}
+          domain={GetDomain()}
+          link={noteID}
+        ></LinkCopy>
       </Dialog>
     </>
   );
