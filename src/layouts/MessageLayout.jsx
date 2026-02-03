@@ -6,7 +6,7 @@ import CircleShadow from "@components/CircleShadow";
 const MessageLayout = ({ children, img, ...props }) => {
   return (
     <div className={"grow self-stretch flex justify-center items-center"}>
-      <div className="flex  justify-center bg-(--color-white-blur) w-full lg:p-20 p-5 rounded-4xl shadow-lg backdrop-blur-xl items-center flex-wrap-reverse gap-5">
+      <div className="flex mt-10 justify-center bg-(--color-white-blur) w-full lg:p-20 p-5 rounded-4xl shadow-lg backdrop-blur-xl items-center flex-wrap-reverse gap-5">
         <div
           {...props}
           className={
