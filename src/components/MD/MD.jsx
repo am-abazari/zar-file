@@ -1,6 +1,6 @@
 "use client";
 import MDEditor from "@uiw/react-md-editor";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 // styles
 import "./md.css";
@@ -18,7 +18,7 @@ import GetDomain from "@helper/GetDomain";
 import { CommandsConfig, ExtraCommandsConfig } from "@configs/MDEditor";
 
 // api
-import createNote from "@api/client/createNote";
+import saveNote from "@api/client/saveNote";
 
 const MD = ({ preview = "preview", content, noteID = "" }) => {
   const [value, setValue] = useState(content ?? "");
@@ -26,20 +26,24 @@ const MD = ({ preview = "preview", content, noteID = "" }) => {
   const [dialogOpen, setDialogOpen] = useState(false);
   const closeHandler = () => setDialogOpen(false);
 
-  const changeHandler = async (e) => {
-    const content = e.target.value;
+  useEffect(() => {
+    const controller = new AbortController();
     try {
-      await createNote(noteID, content);
+      (async () => {
+        await saveNote(noteID, value, controller.signal);
+      })();
     } catch (e) {
       console.warn(e);
     }
-  };
+    return () => {
+      controller.abort("value updated");
+    };
+  }, [value, noteID]);
 
   return (
     <>
       <CircleShadow />
       <MDEditor
-        onChangeCapture={changeHandler}
         value={value}
         visibleDragbar={false}
         onChange={setValue}

@@ -45,10 +45,6 @@ export async function POST(
 
     const content = String(body.content ?? "");
 
-    if (!content.trim()) {
-      return NextResponse.json({ error: "Content is empty" }, { status: 400 });
-    }
-
     const filePath = path.join(NOTES_DIR, `${noteID}.md`);
 
     await fs.mkdir(NOTES_DIR, { recursive: true });
