@@ -6,7 +6,7 @@ const NOTES_DIR = path.join(process.cwd(), "notes");
 
 export async function POST(
   req: NextRequest,
-  context: { params: { noteID: string } },
+  context: { params: Promise<{ noteID: string }> },
 ) {
   try {
     const params = await context.params;
@@ -67,7 +67,7 @@ export async function POST(
 
 export async function GET(
   _req: NextRequest,
-  context: { params: { noteID: string } },
+  context: { params: Promise<{ noteID: string }> },
 ) {
   try {
     const params = await context.params;
