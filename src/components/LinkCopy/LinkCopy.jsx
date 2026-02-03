@@ -6,7 +6,7 @@ import MaterialSymbolsContentCopy from "@icons/MaterialSymbolsContentCopy";
 import MaterialSymbolsCheck from "@icons/MaterialSymbolsCheck";
 
 // styles
-import styles from "./Success.module.css";
+import styles from "./linkCopy.module.css";
 
 // functions
 import sleep from "@functions/sleep";
@@ -14,7 +14,7 @@ import sleep from "@functions/sleep";
 // helper
 import copyText from "@helper/CopyText";
 
-const Success = ({ response, domain }) => {
+const LinkCopy = ({ response, domain }) => {
   const DOWNLOAD_URL = `${domain}/download/${response}`;
 
   const [copied, setCopied] = useState(false);
@@ -70,4 +70,4 @@ const Success = ({ response, domain }) => {
   );
 };
 
-export default Success;
+export default LinkCopy;
