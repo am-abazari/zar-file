@@ -58,7 +58,7 @@ const Dialog = ({
               "bg-(--background)/95 backdrop-blur-xl p-5 rounded-xl max-h-(--size-dialog-height) relative overflow-y-auto",
             )}
           >
-            <CircleShadow className={"bg-(--color-primary-light)"} />
+            <CircleShadow className={"bg-(--color-primary)"} />
             <button
               className={"absolute top-4 right-4 text-xl cursor-pointer"}
               onClick={close}

@@ -12,7 +12,7 @@ const Footer = () => {
       <footer className="mt-15 w-full relative p-8 bg-(--color-white-blur) backdrop-blur-2xl shadow-xl rounded-2xl mb-3 sm:text-base text-sm">
         <CircleShadow
           size={"small"}
-          className={`mt-20 bg-yellow-300 bottom-0 right-0 left-0 mx-auto`}
+          className={`mt-20 bg-(--color-primary) bottom-0 right-0 left-0 mx-auto`}
         />
         <p className={"flex  items-center gap-3"}>
           <SolarProgrammingBroken /> Developed by{" "}

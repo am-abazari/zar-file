@@ -56,10 +56,7 @@ export default function Home() {
       </Hero>
 
       <div className="flex flex-wrap gap-5 mt-36 ">
-        <CircleShadow
-          size={"big"}
-          className={`mt-36 bg-(--color-primary-light)`}
-        />
+        <CircleShadow size={"big"} className={`mt-36 bg-(--color-primary)`} />
         <Card
           icon={<MaterialSymbolsFolderSpecialRounded />}
           title={"File Share"}

@@ -55,6 +55,17 @@
   }
 }
 
+@media (max-width: 768px) {
+  :root {
+    /* Spacing */
+    --size-circle-big: 12em;
+    --size-circle-small: 7rem;
+
+    /* Blur */
+    --blur-circle: 6rem;
+  }
+}
+
 input,
 button,
 select,

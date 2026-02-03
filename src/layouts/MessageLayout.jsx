@@ -14,7 +14,9 @@ const MessageLayout = ({ children, img, ...props }) => {
           }
         >
           {children}
-          <CircleShadow className={"bg-blue-500 inset-y-0 left-0 m-auto"} />
+          <CircleShadow
+            className={"bg-(--color-primary) inset-y-0 left-0 m-auto"}
+          />
         </div>
         <div className={"relative"}>
           <Image className={""} width={500} src={img} alt={""} />
