@@ -1,4 +1,6 @@
 .w-md-editor {
+  z-index: 9;
+
   background-color: transparent;
   box-shadow: none;
   min-height: calc(100vh - 200px);

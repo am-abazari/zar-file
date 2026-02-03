@@ -1,5 +1,5 @@
 "use client";
-import MDEditor, { commands } from "@uiw/react-md-editor";
+import MDEditor from "@uiw/react-md-editor";
 import { useState } from "react";
 
 // styles
@@ -12,21 +12,14 @@ import Dialog from "@components/Dialog/Dialog";
 // helper
 import shareNote from "@helper/ShareNote";
 
-const CommandsConfig = [
-  commands.bold,
-  commands.italic,
-  commands.divider,
-  commands.image,
-  commands.quote,
-  commands.divider,
-  commands.code,
-  commands.codeBlock,
-  commands.divider,
-  commands.table,
-];
+// configs
+import { CommandsConfig, ExtraCommandsConfig } from "@configs/MDEditor";
 
 const MD = ({ preview = "preview" }) => {
   const [value, setValue] = useState("");
+
+  const [dialogOpen, setDialogOpen] = useState(false);
+  const closeHandler = () => setDialogOpen(false);
 
   return (
     <>
@@ -38,17 +31,16 @@ const MD = ({ preview = "preview" }) => {
         commands={CommandsConfig}
         enableScroll={false}
         preview={preview}
-        extraCommands={[
-          commands.codeEdit,
-          commands.codeLive,
-          commands.codePreview,
-          commands.divider,
-          commands.fullscreen,
-          commands.divider,
-          shareNote,
-        ]}
+        extraCommands={[...ExtraCommandsConfig, shareNote(setDialogOpen)]}
       />
-      <Dialog status={true}>salam</Dialog>
+      <Dialog
+        close={closeHandler}
+        shadow={false}
+        status={dialogOpen}
+        size={"large"}
+      >
+        <h3></h3>
+      </Dialog>
     </>
   );
 };
