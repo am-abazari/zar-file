@@ -25,7 +25,7 @@ const Page = async ({ params }) => {
   try {
     await download(batchId);
   } catch (error) {
-    console.error(error);
+    console.warn(error);
     return notFound();
   }
 
