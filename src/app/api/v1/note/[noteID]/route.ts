@@ -68,3 +68,55 @@ export async function POST(
     );
   }
 }
+
+export async function GET(
+  _req: NextRequest,
+  context: { params: { noteID: string } },
+) {
+  try {
+    const params = await context.params;
+    const noteID = params?.noteID;
+
+    if (!noteID || noteID.trim() === "" || noteID === "undefined") {
+      return NextResponse.json(
+        { error: "noteID is missing or invalid" },
+        { status: 400 },
+      );
+    }
+
+    if (!/^[a-zA-Z0-9_-]+$/.test(noteID)) {
+      return NextResponse.json(
+        { error: "Invalid noteID format" },
+        { status: 400 },
+      );
+    }
+
+    const filePath = path.join(NOTES_DIR, `${noteID}.md`);
+
+    try {
+      await fs.access(filePath);
+    } catch {
+      return NextResponse.json(
+        { error: "Note not found", noteID },
+        { status: 404 },
+      );
+    }
+
+    const content = await fs.readFile(filePath, "utf-8");
+
+    return NextResponse.json(
+      {
+        success: true,
+        noteID,
+        content,
+      },
+      { status: 200 },
+    );
+  } catch (err) {
+    console.error("Error reading note:", err);
+    return NextResponse.json(
+      { error: err instanceof Error ? err.message : "Unknown server error" },
+      { status: 500 },
+    );
+  }
+}
