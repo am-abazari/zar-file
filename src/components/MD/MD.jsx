@@ -4,7 +4,13 @@ import { useState } from "react";
 
 // styles
 import "./md.css";
+
+// components
 import CircleShadow from "@components/CircleShadow";
+import Dialog from "@components/Dialog/Dialog";
+
+// helper
+import shareNote from "@helper/ShareNote";
 
 const CommandsConfig = [
   commands.bold,
@@ -32,7 +38,17 @@ const MD = ({ preview = "preview" }) => {
         commands={CommandsConfig}
         enableScroll={false}
         preview={preview}
+        extraCommands={[
+          commands.codeEdit,
+          commands.codeLive,
+          commands.codePreview,
+          commands.divider,
+          commands.fullscreen,
+          commands.divider,
+          shareNote,
+        ]}
       />
+      <Dialog status={true}>salam</Dialog>
     </>
   );
 };
