@@ -1,12 +1,14 @@
 // components
 import MD from "@components/MD/MD";
 
+// functions
+import previewValidate from "@functions/previewValidate";
+
 const Page = async ({ searchParams }) => {
-  const preview = (await searchParams).preview;
-  console.log(preview);
+  let preview = previewValidate((await searchParams).show);
   return (
     <div className="w-full grow pt-10">
-      <MD></MD>
+      <MD preview={preview}></MD>
     </div>
   );
 };
