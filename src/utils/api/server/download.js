@@ -1,7 +1,7 @@
 // api
 import api from "@axios/axiosServer";
 
-const download = async (batchId) => {
-  return await api.get(`/download/${batchId}`);
+const download = async (batchID) => {
+  return await api.post(`/download/`, { batchID });
 };
 export default download;
