@@ -82,7 +82,7 @@ const Page = () => {
       <Hero
         title={
           <>
-            <span className={`text-(--text-primary) font-bold`}>Upload</span>
+            <span className={`text-(--text-primary) font-bold`}>Upload</span>{" "}
             <span className={"text-2xl text-(--text-primary) font-thin"}>
               &
             </span>{" "}
