@@ -1,0 +1,43 @@
+.w-md-editor {
+  z-index: 100 !important;
+  background-color: transparent;
+  box-shadow: none;
+  min-height: calc(100vh - 200px);
+
+  backdrop-filter: blur(var(--blur-3xl));
+
+  .w-md-editor-toolbar {
+    border: none;
+    background-color: var(--md-background);
+    padding: 20px;
+    border-radius: 10px;
+  }
+  .w-md-editor-content {
+    margin-top: 20px;
+
+    .w-md-editor-area {
+      background-color: var(--md-background);
+      height: 100% !important;
+      border-radius: 10px 0 0 10px;
+
+      .w-md-editor-text {
+        height: 100%;
+        textarea {
+          height: 100%;
+        }
+      }
+    }
+
+    .w-md-editor-preview {
+      background-color: var(--md-background);
+      border-radius: 0 10px 10px 0;
+
+      * {
+        background-color: transparent;
+      }
+      pre {
+        background-color: var(--md-background);
+      }
+    }
+  }
+}
