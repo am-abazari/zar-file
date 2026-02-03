@@ -6,7 +6,7 @@ const share = {
       <button
         aria-label="share note"
         disabled={false}
-        onClick={(evn) => {
+        onClick={() => {
           // evn.stopPropagation();
           executeCommand(command, command.groupName);
         }}
