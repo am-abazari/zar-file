@@ -1,6 +1,6 @@
 "use client";
 import MDEditor from "@uiw/react-md-editor";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 // styles
 import "./md.css";
@@ -29,9 +29,10 @@ const MD = ({ preview = "preview", content, noteID = "" }) => {
   const changeHandler = async (e) => {
     const content = e.target.value;
     try {
-      const resp = await createNote(noteID, content);
-      console.log(resp);
-    } catch (e) {}
+      await createNote(noteID, content);
+    } catch (e) {
+      console.warn(e);
+    }
   };
 
   return (

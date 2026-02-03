@@ -1,5 +1,3 @@
-import { notFound } from "next/navigation";
-
 // components
 import MD from "@components/MD/MD";
 
@@ -25,7 +23,6 @@ const Page = async ({ searchParams, params }) => {
     content = await getNote(noteID);
   } catch (error) {
     console.warn(error);
-    return notFound();
   }
 
   return (
