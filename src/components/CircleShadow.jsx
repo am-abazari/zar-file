@@ -15,7 +15,7 @@ const CircleShadow = ({ className, size = "big", ...props }) => {
       className={clsx(
         className,
         styles.CircleShadow,
-        "-z-1 rounded-full blur-(--blur-circle) m-auto absolute",
+        "-z-1 rounded-full blur-(--blur-circle) m-auto absolute bg-(--color-primary)",
       )}
       {...props}
     ></div>

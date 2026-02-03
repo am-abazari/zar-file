@@ -168,7 +168,7 @@ const Page = () => {
             multiple={true}
           />
         </div>
-        <CircleShadow size={"big"} className={`mt-36 bg-(--color-primary)`} />
+        <CircleShadow size={"big"} className={`mt-36`} />
       </div>
 
       {/* Links */}
