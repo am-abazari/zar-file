@@ -8,8 +8,8 @@ import File from "@components/File/File";
 import CircleShadow from "@components/CircleShadow";
 import Button from "@components/Button";
 import Dialog from "@components/Dialog/Dialog";
-import Success from "@components/Upload/Success";
 import Fail from "@components/Upload/Fail";
+import LinkCopy from "@components/LinkCopy/LinkCopy";
 
 // icons
 import MaterialSymbolsArrowUploadProgressRounded from "@icons/MaterialSymbolsArrowUploadProgressRounded";
@@ -174,7 +174,11 @@ const Page = () => {
       {/* Links */}
       <Dialog size={"fit"} status={dialogOpen} close={closeHandler}>
         {response.success ? (
-          <Success domain={GetDomain()} response={response.success} />
+          <LinkCopy
+            title={"Files Uploaded Successfully !"}
+            domain={GetDomain()}
+            link={`download/${response.success}`}
+          />
         ) : response.error ? (
           <Fail close={closeHandler} response={response.error} />
         ) : (

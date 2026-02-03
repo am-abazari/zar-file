@@ -14,8 +14,8 @@ import sleep from "@functions/sleep";
 // helper
 import copyText from "@helper/CopyText";
 
-const LinkCopy = ({ response, domain }) => {
-  const DOWNLOAD_URL = `${domain}/download/${response}`;
+const LinkCopy = ({ link, title, domain }) => {
+  const DOWNLOAD_URL = `${domain}/${link}`;
 
   const [copied, setCopied] = useState(false);
 
@@ -32,8 +32,8 @@ const LinkCopy = ({ response, domain }) => {
   };
   return (
     <div className="md:p-10 p-3">
-      <p className={clsx(`font-bold text-(--text-success)`, styles.message)}>
-        Files Uploaded Successfully !
+      <p className={clsx(`font-bold text-(--color-primary)`, styles.message)}>
+        {title}
       </p>
       <button className={"mt-14 w-full"}>
         <p className={clsx("font-bold mb-4 text-left", styles.share)}>
