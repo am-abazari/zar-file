@@ -25,12 +25,12 @@ const Page = () => {
           </>
         }
       >
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium
-        asperiores autem commodi consequuntur, officiis pariatur velit! Adipisci
-        aliquam aliquid aperiam dolorem, excepturi minus provident repudiandae
-        saepe unde vero. Ad commodi cumque dignissimos dolorem, in libero minus
-        mollitia, natus officia, perferendis praesentium quae quas quidem quo
-        saepe sit unde. Atque, cumque?
+        Write and share notes effortlessly with full Markdown support. Create
+        rich, formatted content in seconds and share it instantly via a live
+        link. Everyone with the link can view your note in real time, making
+        collaboration, updates, and information sharing fast, simple, and
+        seamless. Perfect for quick memos, guides, or any text you want to share
+        without extra steps.
         <div className="flex gap-6 justify-center items-center mt-16 flex-wrap">
           <Button
             type={"link"}
@@ -61,14 +61,13 @@ const Page = () => {
           }
         >
           <h3 className={"font-bold text-(--text-primary) text-xl"}>
-            Markdown Note
+            Create Once, Share Everywhere
           </h3>
           <p className={"mt-4 text-(--text-secondary) text-justify"}>
             {" "}
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid
-            amet consectetur deserunt impedit incidunt, laudantium nemo, nisi
-            optio, possimus quasi quia recusandae tenetur voluptatem. Id iure
-            minus quia quo sequi!
+            Write your note once and share it instantly with anyone, anywhere.
+            One live link gives access to your note across devices, making
+            sharing and collaboration seamless and hassle-free.
           </p>
         </div>
         <div
@@ -77,14 +76,13 @@ const Page = () => {
           }
         >
           <h3 className={"font-bold text-(--text-primary) text-xl"}>
-            Simple Note
+            Markdown Made Easy
           </h3>
           <p className={"mt-4 text-(--text-secondary) text-justify"}>
             {" "}
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid
-            amet consectetur deserunt impedit incidunt, laudantium nemo, nisi
-            optio, possimus quasi quia recusandae tenetur voluptatem. Id iure
-            minus quia quo sequi!
+            Format your notes effortlessly using Markdown. Add headings, lists,
+            links, and more without any complicated tools, keeping your content
+            structured and easy to read.
           </p>
         </div>
         <div
@@ -93,14 +91,13 @@ const Page = () => {
           }
         >
           <h3 className={"font-bold text-(--text-primary) text-xl"}>
-            Secure Share
+            Share Only With Who You Want
           </h3>
           <p className={"mt-4 text-(--text-secondary) text-justify"}>
             {" "}
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid
-            amet consectetur deserunt impedit incidunt, laudantium nemo, nisi
-            optio, possimus quasi quia recusandae tenetur voluptatem. Id iure
-            minus quia quo sequi!
+            Control who can see your notes. Keep them private for select people
+            or share publicly with a link—your content stays under your control
+            at all times.
           </p>
         </div>
         <div
@@ -109,14 +106,13 @@ const Page = () => {
           }
         >
           <h3 className={"font-bold text-(--text-primary) text-xl"}>
-            Public & Private Share
+            Real-Time Access
           </h3>
           <p className={"mt-4 text-(--text-secondary) text-justify"}>
             {" "}
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid
-            amet consectetur deserunt impedit incidunt, laudantium nemo, nisi
-            optio, possimus quasi quia recusandae tenetur voluptatem. Id iure
-            minus quia quo sequi!
+            Anyone with the link sees updates instantly. Edit your notes and
+            watch changes appear live, ensuring everyone is always on the same
+            page without delays.
           </p>
         </div>
         <CircleShadow size={"big"} className={`mt-36`} />

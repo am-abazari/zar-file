@@ -91,12 +91,11 @@ const Page = () => {
           </>
         }
       >
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium
-        asperiores autem commodi consequuntur, officiis pariatur velit! Adipisci
-        aliquam aliquid aperiam dolorem, excepturi minus provident repudiandae
-        saepe unde vero. Ad commodi cumque dignissimos dolorem, in libero minus
-        mollitia, natus officia, perferendis praesentium quae quas quidem quo
-        saepe sit unde. Atque, cumque?
+        Upload your files quickly and manage them with ease in one secure place.
+        Share your content through simple links that allow others to download
+        files instantly, without sign-ups or unnecessary steps. Designed for
+        speed and simplicity, this page helps you upload, access, and share your
+        files anytime, from any device, with full control over your content.
       </Hero>
 
       <div className={"flex flex-wrap gap-5 w-full mt-32"}>
@@ -106,14 +105,14 @@ const Page = () => {
           }
         >
           <h3 className={"font-bold text-(--text-primary) text-xl"}>
-            Fast Uploading
+            Upload Instantly
           </h3>
           <p className={"mt-4 text-(--text-secondary) text-justify"}>
             {" "}
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid
-            amet consectetur deserunt impedit incidunt, laudantium nemo, nisi
-            optio, possimus quasi quia recusandae tenetur voluptatem. Id iure
-            minus quia quo sequi!
+            Upload your files in seconds with a smooth, hassle-free interface.
+            No complicated steps, no waiting—just drag, drop, and your files are
+            ready to share immediately. Designed to save you time and make file
+            management effortless.
           </p>
         </div>
         <div
@@ -122,14 +121,14 @@ const Page = () => {
           }
         >
           <h3 className={"font-bold text-(--text-primary) text-xl"}>
-            Slow Uploading
+            One Link, All Files
           </h3>
           <p className={"mt-4 text-(--text-secondary) text-justify"}>
             {" "}
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid
-            amet consectetur deserunt impedit incidunt, laudantium nemo, nisi
-            optio, possimus quasi quia recusandae tenetur voluptatem. Id iure
-            minus quia quo sequi!
+            Combine all your uploaded files into a single, easy-to-share link.
+            Send it to anyone, anywhere, without worrying about multiple
+            attachments or lost files. Sharing your content has never been
+            simpler or more organized.
           </p>
         </div>
 
