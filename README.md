@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Zar File
 
-## Getting Started
+Open-Source Platform for Uploading and Downloading Files
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+<img width="1920" alt="Zar File Project Demo" src="./public/demo.png"/>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Simple and optimized Personal Website [( See Demo )](https://file.amabazari.ir/) . It includes:
 
-You can start editing the page by modifying `app/page.jsx`. The page auto-updates as you edit the file.
+- [x] Next.js 16.1.5
+- [x] Archiver 7.0.1
+- [x] react-md-editor 4.0.11
+- [x] Eslint linting with continuous linting on file change
+- [x] Prettier
+- [x] knip
+- [x] tailwindcss 4
+- [x] react-compiler 1
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Starting the dev server
 
-## Learn More
+Make sure you have the latest Stable or LTS version of Node.js installed.
 
-To learn more about Next.js, take a look at the following resources:
+1. `git clone https://github.com/am-abazari/zar-file.git`
+2. Run `npm install` or `yarn install`
+3. Start the dev server using `npm run dev` or `yarn dev`
+4. Open [http://localhost:3000/](http://localhost:3000/)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Environment Variables
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Create `.env` file inside of project
+2. Set `API_BASE_URL` value to your backend api.
+3. set `UPLOAD_DIR` value. (default is `uploads/private`)
+4. set `NOTES_DIR` value. (default is `notes`)
+5. set `NEXT_PUBLIC_API_URL` value. (default is `api`)
+6. set `NEXT_PUBLIC_API_VERSION` value. (default is `v1`)
 
-## Deploy on Vercel
+## Available Commands
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- `npm run dev` - start the dev server
+- `npm run build` - building project
+- `npm run start` - start build files
+- `npx knip` - find unused files or exports
+- `npx prettier . --write` format all files and write them
+- `npm run lint` linting files
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Code Coverage
+
+The project is using the <strong>Next.js</strong>. All configurations are located in `package.json`
+
+You can find Alias and url configs in `tsconfig.json`
+
+Vercel deployment configs located in `vercel.json`
+
+Configs about redirecting pages are located in `next.config.json`
+
+You can config `prttier` and `eslint` in `.prettierrc.json` and `eslint.config.mjs` or `.eslintrc.json` files
+
+## About Author
+
+<strong>[Amirhossein Abazari](https://amabazari.ir)</strong> Full-Stack Web Developer
