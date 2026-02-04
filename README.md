@@ -2,7 +2,7 @@
 
 Open-Source Platform for Uploading and Downloading Files
 
----
+
 
 <img width="1920" alt="Zar File Project Demo" src="./public/demo.png"/>
 
