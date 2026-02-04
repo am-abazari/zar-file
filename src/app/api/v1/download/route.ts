@@ -3,7 +3,7 @@ import fs from "fs";
 import path from "path";
 
 const BASE_UPLOAD_DIR = process.env.UPLOAD_DIR
-  ? path.resolve(process.env.UPLOAD_DIR)
+  ? path.join(process.cwd(), process.env.UPLOAD_DIR)
   : path.join(process.cwd(), "uploads", "private");
 
 export async function POST(request: NextRequest) {

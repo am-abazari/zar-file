@@ -5,7 +5,7 @@ import fsSync from "fs";
 import archiver from "archiver";
 
 const BASE_UPLOAD_DIR = process.env.UPLOAD_DIR
-  ? path.resolve(process.env.UPLOAD_DIR)
+  ? path.join(process.cwd(), process.env.UPLOAD_DIR)
   : path.join(process.cwd(), "uploads", "private");
 
 // Helper to get mime type (unchanged)
