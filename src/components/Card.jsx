@@ -1,6 +1,13 @@
 import clsx from "clsx";
 
-const Card = ({ className, children, title, icon, ...props }) => {
+const Card = ({
+  className,
+  children,
+  title,
+  icon = "",
+  titleColor = "",
+  ...props
+}) => {
   return (
     <div
       className={clsx(
@@ -8,14 +15,16 @@ const Card = ({ className, children, title, icon, ...props }) => {
       )}
     >
       <h3 className={`font-bold text-xl flex gap-5 items-center`}>
-        <span
-          className={
-            "border rounded-full p-3 border-dashed border-(--color-primary) text-justify"
-          }
-        >
-          {icon}
-        </span>
-        <span>{title}</span>
+        {icon && (
+          <span
+            className={
+              "border rounded-full p-3 border-dashed border-(--color-primary) text-justify"
+            }
+          >
+            {icon}
+          </span>
+        )}
+        <span className={titleColor}>{title}</span>
       </h3>
       <div
         className={clsx(className, "mt-6 text-left text-(--text-secondary)")}

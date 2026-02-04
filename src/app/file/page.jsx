@@ -10,6 +10,7 @@ import Button from "@components/Button";
 import Dialog from "@components/Dialog/Dialog";
 import Fail from "@components/Upload/Fail";
 import LinkCopy from "@components/LinkCopy/LinkCopy";
+import Card from "@components/Card";
 
 // icons
 import MaterialSymbolsArrowUploadProgressRounded from "@icons/MaterialSymbolsArrowUploadProgressRounded";
@@ -99,38 +100,24 @@ const Page = () => {
       </Hero>
 
       <div className={"flex flex-wrap gap-5 w-full mt-32"}>
-        <div
-          className={
-            "basis-(--size-mobile-medium) grow bg-(--color-white-blur) rounded-xl p-8 shadow-lg backdrop-blur-xl"
-          }
+        <Card
+          titleColor={"text-(--color-primary)"}
+          title={<>Upload Instantly</>}
         >
-          <h3 className={"font-bold text-(--text-primary) text-xl"}>
-            Upload Instantly
-          </h3>
-          <p className={"mt-4 text-(--text-secondary) text-justify"}>
-            {" "}
-            Upload your files in seconds with a smooth, hassle-free interface.
-            No complicated steps, no waiting—just drag, drop, and your files are
-            ready to share immediately. Designed to save you time and make file
-            management effortless.
-          </p>
-        </div>
-        <div
-          className={
-            "basis-(--size-mobile-medium) grow bg-(--color-white-blur) rounded-xl p-8 shadow-lg backdrop-blur-xl"
-          }
+          Upload your files in seconds with a smooth, hassle-free interface. No
+          complicated steps, no waiting—just drag, drop, and your files are
+          ready to share immediately. Designed to save you time and make file
+          management effortless.
+        </Card>
+        <Card
+          titleColor={"text-(--color-primary)"}
+          title={<>One Link, All Files</>}
         >
-          <h3 className={"font-bold text-(--text-primary) text-xl"}>
-            One Link, All Files
-          </h3>
-          <p className={"mt-4 text-(--text-secondary) text-justify"}>
-            {" "}
-            Combine all your uploaded files into a single, easy-to-share link.
-            Send it to anyone, anywhere, without worrying about multiple
-            attachments or lost files. Sharing your content has never been
-            simpler or more organized.
-          </p>
-        </div>
+          Combine all your uploaded files into a single, easy-to-share link.
+          Send it to anyone, anywhere, without worrying about multiple
+          attachments or lost files. Sharing your content has never been simpler
+          or more organized.
+        </Card>
 
         <div
           className={
