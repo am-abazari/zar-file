@@ -2,7 +2,9 @@ import { NextRequest, NextResponse } from "next/server";
 import fs from "node:fs/promises";
 import path from "node:path";
 
-const NOTES_DIR = path.join(process.cwd(), "notes");
+const NOTES_DIR = process.env.NOTES_DIR
+  ? path.join(process.cwd(), process.env.NOTES_DIR)
+  : path.join(process.cwd(), "notes");
 
 export async function POST(
   req: NextRequest,
