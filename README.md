@@ -2,8 +2,6 @@
 
 Open-Source Platform for Uploading and Downloading Files
 
-
-
 <img width="1920" alt="Zar File Project Demo" src="./public/demo.png"/>
 
 Simple and optimized Personal Website [( See Demo )](https://file.amabazari.ir/) . It includes:
