@@ -4,7 +4,7 @@ import path from "node:path";
 
 const NOTES_DIR = process.env.NOTES_DIR
   ? path.join(process.cwd(), process.env.NOTES_DIR)
-  : path.join(process.cwd(), "notes");
+  : path.join(process.cwd(), "public", "notes");
 
 export async function POST(
   req: NextRequest,

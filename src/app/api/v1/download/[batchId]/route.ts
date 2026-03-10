@@ -6,7 +6,7 @@ import archiver from "archiver";
 
 const BASE_UPLOAD_DIR = process.env.UPLOAD_DIR
   ? path.join(process.cwd(), process.env.UPLOAD_DIR)
-  : path.join(process.cwd(), "uploads", "private");
+  : path.join(process.cwd(), "public", "uploads");
 
 // Helper to get mime type (unchanged)
 function getMimeType(filename: string): string {

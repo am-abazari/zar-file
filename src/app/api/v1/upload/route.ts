@@ -8,7 +8,7 @@ import NanoID from "@functions/nanoID";
 
 const BASE_UPLOAD_DIR = process.env.UPLOAD_DIR
   ? path.join(process.cwd(), process.env.UPLOAD_DIR)
-  : path.join(process.cwd(), "uploads", "private");
+  : path.join(process.cwd(), "public", "uploads");
 
 const MAX_FILE_SIZE: number = process.env.MAX_FILE_SIZE
   ? Number(process.env.MAX_FILE_SIZE)
@@ -94,7 +94,7 @@ export async function POST(req: NextRequest) {
         storedName,
         size: file.size,
         type: file.type,
-        relativePath: `uploads/private/${batchId}/${storedName}`,
+        relativePath: `public/uploads/${batchId}/${storedName}`,
       });
     }
 
@@ -103,7 +103,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({
       success: !hasErrors,
       batchId,
-      batchFolder: `/uploads/private/${batchId}`,
+      batchFolder: `/public/uploads/${batchId}`,
       files: results,
       count: results.length,
       message: hasErrors

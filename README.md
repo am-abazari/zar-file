@@ -28,8 +28,8 @@ Make sure you have the latest Stable or LTS version of Node.js installed.
 
 1. Create `.env` file inside of project
 2. Set `API_BASE_URL` value to your backend api.
-3. set `UPLOAD_DIR` value. (default is `uploads/private`)
-4. set `NOTES_DIR` value. (default is `notes`)
+3. set `UPLOAD_DIR` value. (default is `public/uploads`)
+4. set `NOTES_DIR` value. (default is `public/notes`)
 5. set `NEXT_PUBLIC_API_URL` value. (default is `api`)
 6. set `NEXT_PUBLIC_API_VERSION` value. (default is `v1`)
 
